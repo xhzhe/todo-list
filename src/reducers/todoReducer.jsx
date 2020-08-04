@@ -7,14 +7,14 @@ export const todo = (state = initTodoList, action) => {
         case "DELETE_TODO":
             return [...state].filter((item, index) => index !== action.id)
         case "DONE_TODO":
-            let todo = state;
-            for (let index = 0; index < todo.length; index++) {
+            let stateCopy = [...state]
+            stateCopy.map((item, index) => {
                 if (index === action.id) {
-                    todo[index].done = !todo[index].done
-                    break;
+                    return item.done = !item.done
                 }
-            }
-            return todo;
+                return item.done
+            })
+            return [...stateCopy]
         default:
             return state;
     }
