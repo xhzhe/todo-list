@@ -11,13 +11,11 @@ export const todo = (state = initTodoList, action) => {
             })
             return data
         case "DELETE_TODO":
-            //todo delete
             return [...state].filter(item => item.id !== action.id)
         case "DONE_TODO":
             let stateCopy = [...state]
             stateCopy.map(item => {
                 if (item.id === action.id) {
-                    //todo update
                     return item.done = !item.done
                 }
                 return item.done
