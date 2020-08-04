@@ -1,5 +1,6 @@
 import React from "react";
 import todos from "../../Data/TodoData";
+import axios from "axios";
 
 class TodoForm extends React.Component {
     constructor(props) {
@@ -16,7 +17,11 @@ class TodoForm extends React.Component {
     }
 
     addTodo = () => {
-        this.props.add(this.state.todoText);
+        axios.post('https://5e9ec500fb467500166c4658.mockapi.io/todos', {
+            "content": this.state.todoText
+        }).then((response) => {
+            this.props.add(response.data)
+        })
     }
 
     handleSubmit = (event) => {

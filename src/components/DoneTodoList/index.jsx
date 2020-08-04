@@ -6,8 +6,10 @@ class DoneTodoList extends React.Component {
     render() {
         return (
             <div className='done-todo-list'>
-                {this.props.todo.filter(item => item.done === true).map((item, index) => <TodoContainer key={item.id} value={item.text} done={item.done}
-                                                                                                        index={index} id={item.id}/>)}
+                {this.props.todo.filter(item => item.done === true).map(item => <TodoContainer key={item.id}
+                                                                                               value={item.text}
+                                                                                               done={item.done}
+                                                                                               id={item.id}/>)}
             </div>
         );
     }
