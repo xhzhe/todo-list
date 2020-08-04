@@ -10,11 +10,11 @@ class Todo extends React.Component {
     }
 
     render() {
-        return <div>
-            <div onClick={this.done} className={this.props.done ? 'done' : 'not-done'}>
+        return <div className="outer">
+            <span onClick={this.done} className={this.props.done ? 'done' : 'not-done'}>
                 {this.props.value}
-            </div>
-            <button onClick={this.delete}>x</button>
+            </span>
+            <button onClick={this.delete} className="x-button">x</button>
         </div>
 
     }

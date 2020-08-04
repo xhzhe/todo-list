@@ -1,6 +1,27 @@
 .done {
     text-decoration: line-through;
+    padding: 5px;
 }
-.not-done {
 
+.not-done {
+    padding: 5px;
+}
+
+.outer {
+    margin-top: 10px;
+    border: black solid 1px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.x-button {
+    float: right;
+    background-color: transparent;
+    border: none;
+}
+
+.outer:last-child{
+    margin-bottom: 5px;
 }
