@@ -1,9 +1,17 @@
 import React from "react";
 import './index.css'
+import axios from 'axios';
 
 class Todo extends React.Component {
     delete = () => {
-        this.props.deleteTodo(this.props.id);
+        axios.delete('https://5e9ec500fb467500166c4658.mockapi.io/todos/' + this.props.id)
+            .then((response) => {
+                if (response.data === "Not found") {
+                    alert("Not found");
+                } else {
+                    this.props.deleteTodo(this.props.id);
+                }
+            })
     }
 
     done = () => {
