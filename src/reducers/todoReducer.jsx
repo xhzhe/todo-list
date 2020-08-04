@@ -5,7 +5,11 @@ export const todo = (state = initTodoList, action) => {
         case "ADD_TODO_LIST":
             return [...state, {text: action.content, done: action.status, id: action.id}]
         case "INIT_DATA":
-            return state
+            let data = []
+            action.data.forEach(item => {
+                data.push({id: item.id, text: item.content, done: item.status})
+            })
+            return data
         case "DELETE_TODO":
             //todo delete
             return [...state].filter(item => item.id !== action.id)
