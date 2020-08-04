@@ -1,12 +1,13 @@
 import React from "react";
 import './index.css'
+
 class Todo extends React.Component {
     delete = () => {
-        this.props.deleteTodo(this.props.index);
+        this.props.deleteTodo(this.props.id);
     }
 
     done = () => {
-        this.props.doneTodo(this.props.index);
+        this.props.doneTodo(this.props.id);
     }
 
     render() {

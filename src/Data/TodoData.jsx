@@ -1,8 +1,7 @@
-// import axios from 'axios';
-//
-// const todos = () => {
-//     let fetch = axios.create({
-//         baseURL: 'https://5e9ec500fb467500166c4658.mockapi.io/todos',
-//         timeout: 5000
-//     })
-// }
+import axios from 'axios';
+
+const baseUrl = 'https://5e9ec500fb467500166c4658.mockapi.io/todos'
+const todos = axios.get(baseUrl);
+
+
+export default todos;

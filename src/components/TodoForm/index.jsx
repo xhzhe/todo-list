@@ -1,4 +1,5 @@
 import React from "react";
+import todos from "../../Data/TodoData";
 
 class TodoForm extends React.Component {
     constructor(props) {
@@ -6,6 +7,12 @@ class TodoForm extends React.Component {
         this.state = {
             todoText: ""
         }
+    }
+
+    componentDidMount() {
+        todos.then((response) => {
+            this.props.initData(response.data);
+        })
     }
 
     addTodo = () => {
