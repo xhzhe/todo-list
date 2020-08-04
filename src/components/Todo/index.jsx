@@ -15,7 +15,15 @@ class Todo extends React.Component {
     }
 
     done = () => {
-        this.props.doneTodo(this.props.id);
+        axios.put('https://5e9ec500fb467500166c4658.mockapi.io/todos/' + this.props.id, {
+            "status": !this.props.done
+        }).then((response) => {
+            if (response.data === "Not found") {
+                alert("Not found");
+            } else {
+                this.props.doneTodo(this.props.id);
+            }
+        })
     }
 
     render() {
