@@ -1,10 +1,11 @@
 import React from "react";
-import Todo from "../Todo";
+import TodoContainer from "../../containers/TodoContainer";
 
 class TodoList extends React.Component{
     render() {
         return <div>
-            {this.props.todo.map((text, index) => <Todo key={index} value={text}/>)}
+            {this.props.todo.map((item, index) => <TodoContainer key={index} value={item.text} done={item.done}
+                                                                 index={index}/>)}
         </div>
     }
 }
