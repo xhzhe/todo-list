@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {TodoFormContainer} from "./containers/TodoFormContainer";
 
 function App() {
   return (
@@ -8,8 +8,7 @@ function App() {
       <header className="App-header">
         header
       </header>
-      <todoListContainer/>
-      <todoFormContainer/>
+      <TodoFormContainer/>
     </div>
   );
 }
