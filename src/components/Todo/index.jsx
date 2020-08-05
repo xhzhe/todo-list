@@ -18,7 +18,7 @@ class Todo extends React.Component {
     }
 
     done = () => {
-        modifyTodo(this.props.id, {status: !this.props.done})
+        modifyTodo(this.props.id, {content: this.props.value, status: !this.props.done})
             .then(() => {
                 this.props.doneTodo(this.props.id);
             })
