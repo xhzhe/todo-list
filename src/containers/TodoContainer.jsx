@@ -1,13 +1,14 @@
 import Todo from "../components/Todo";
 import {connect} from "react-redux";
+import {deleteTodo, doneTodo} from "../actions";
 
 const mapDispatchToProps = dispatch => {
     return {
         deleteTodo: (id) => {
-            dispatch({type: "DELETE_TODO", id: id})
+            dispatch(deleteTodo(id))
         },
         doneTodo: (id) => {
-            dispatch({type: "DONE_TODO", id: id})
+            dispatch(doneTodo(id))
         }
     }
 }

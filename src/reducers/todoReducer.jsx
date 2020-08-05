@@ -2,7 +2,7 @@ const initTodoList = []
 
 export const todo = (state = initTodoList, action) => {
     switch (action.type) {
-        case "ADD_TODO_LIST":
+        case "ADD_TODO":
             return [...state, {text: action.data.content, done: action.data.status, id: action.data.id}]
         case "INIT_DATA":
             let data = []
