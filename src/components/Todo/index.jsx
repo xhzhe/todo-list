@@ -1,29 +1,29 @@
 import React from "react";
 import './index.css'
-import axios from 'axios';
+import {deleteTodo, modifyTodo} from "../../Data/TodoData";
+
+const DATA_NOT_FOUND = "Not found";
 
 class Todo extends React.Component {
     delete = () => {
-        axios.delete('https://5e9ec500fb467500166c4658.mockapi.io/todos/' + this.props.id)
-            .then((response) => {
-                if (response.data === "Not found") {
-                    alert("Not found");
-                } else {
-                    this.props.deleteTodo(this.props.id);
-                }
-            })
+        deleteTodo(this.props.id).then((response) => {
+            if (response.data === DATA_NOT_FOUND) {
+                alert(DATA_NOT_FOUND);
+            } else {
+                this.props.deleteTodo(this.props.id);
+            }
+        })
     }
 
     done = () => {
-        axios.put('https://5e9ec500fb467500166c4658.mockapi.io/todos/' + this.props.id, {
-            "status": !this.props.done
-        }).then((response) => {
-            if (response.data === "Not found") {
-                alert("Not found");
-            } else {
-                this.props.doneTodo(this.props.id);
-            }
-        })
+        modifyTodo(this.props.id, {status: !this.props.done})
+            .then((response) => {
+                if (response.data === DATA_NOT_FOUND) {
+                    alert(DATA_NOT_FOUND);
+                } else {
+                    this.props.doneTodo(this.props.id);
+                }
+            })
     }
 
     render() {
