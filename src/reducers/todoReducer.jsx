@@ -3,13 +3,13 @@ const initTodoList = []
 export const todo = (state = initTodoList, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            return [...state, {text: action.data.content, done: action.data.status, id: action.data.id}]
+            return [{text: action.data.content, done: action.data.status, id: action.data.id}, ...state,]
         case "INIT_DATA":
             let data = []
             action.data.forEach(item => {
                 data.push({id: item.id, text: item.content, done: item.status})
             })
-            return data
+            return data.reverse()
         case "DELETE_TODO":
             return [...state].filter(item => item.id !== action.id)
         case "DONE_TODO":
