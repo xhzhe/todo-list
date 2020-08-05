@@ -19,7 +19,6 @@ export const todo = (state = initTodoList, action) => {
                     item.done = !item.done
                 }
             })
-            console.log([...stateCopy])
             return [...stateCopy]
         default:
             return state;
