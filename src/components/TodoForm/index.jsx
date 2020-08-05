@@ -1,5 +1,7 @@
 import React from "react";
 import {addTodo, getTodoList} from "../../Data/TodoAPI";
+import {Button, Col, Input, Row} from "antd";
+import {PlusOutlined} from '@ant-design/icons/lib'
 
 class TodoForm extends React.Component {
     constructor(props) {
@@ -26,8 +28,17 @@ class TodoForm extends React.Component {
     }
 
     render() {
-        return <div>
-                <span><input name="todoText" onChange={this.handleSubmit}/><button onClick={this.addTodo} >add</button></span>
+        return <div style={{margin: '10px auto', width: '60%'}}>
+            <>
+                <Row>
+                    <Col flex={50}>
+                        <Input placeholder='今天要做什么呢，博士' size="large" name="todoText" onChange={this.handleSubmit}/>
+                    </Col>
+                    <Col flex={1}>
+                        <Button type="primary" shape="circle" size="large" onClick={this.addTodo} aria-colspan={6}><PlusOutlined/></Button>
+                    </Col>
+                </Row>
+            </>
         </div>
     }
 }
