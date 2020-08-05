@@ -14,12 +14,12 @@ export const todo = (state = initTodoList, action) => {
             return [...state].filter(item => item.id !== action.id)
         case "DONE_TODO":
             let stateCopy = [...state]
-            stateCopy.map(item => {
+            stateCopy.forEach(item => {
                 if (item.id === action.id) {
-                    return item.done = !item.done
+                    item.done = !item.done
                 }
-                return item.done
             })
+            console.log([...stateCopy])
             return [...stateCopy]
         default:
             return state;
