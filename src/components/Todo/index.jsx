@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css'
-import {deleteTodo, modifyTodo} from "../../Data/TodoData";
+import {deleteTodo, modifyTodo} from "../../Data/TodoAPI";
 
 const DATA_NOT_FOUND = "Not found";
 

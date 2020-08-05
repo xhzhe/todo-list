@@ -1,5 +1,5 @@
 import React from "react";
-import {addTodo, getTodoList} from "../../Data/TodoData";
+import {addTodo, getTodoList} from "../../Data/TodoAPI";
 
 class TodoForm extends React.Component {
     constructor(props) {
