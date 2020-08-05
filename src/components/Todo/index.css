@@ -1,10 +1,14 @@
 .done {
     text-decoration: line-through;
     padding: 5px;
+    width: 90%;
+    text-align: left;
 }
 
 .not-done {
     padding: 5px;
+    width: 90%;
+    text-align: left;
 }
 
 .outer {
@@ -14,12 +18,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 22px;
+    box-shadow: 2px 2px 5px #666;
 }
 
 .x-button {
     float: right;
     background-color: transparent;
     border: none;
+    border-left: 1px solid #666;
+    height: 100%;
+    width: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.x-button:hover{
+    background-color: red;
+    border: red;
 }
 
 .outer:last-child{
