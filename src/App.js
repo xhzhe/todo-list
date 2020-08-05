@@ -12,10 +12,10 @@ const {Header, Content, Footer} = Layout;
 function App() {
     return (
         <Router>
-            <Layout className="layout" style={{minHeight:'100vh'}}>
+            <Layout className="layout" style={{minHeight: '100vh'}}>
                 <Header>
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                        <Menu.Item ><CalendarOutlined/></Menu.Item>
+                        <Menu.Item><CalendarOutlined/></Menu.Item>
                         <Menu.Item key="1"><Link to='/'>博士，您还有许多事情需要处理。现在还不能休息哦。</Link></Menu.Item>
                         <Menu.Item key="2"><Link to='/done-todo-list'>今天已经不剩多少时间了，您今天的任务完成了吗？</Link></Menu.Item>
                     </Menu>

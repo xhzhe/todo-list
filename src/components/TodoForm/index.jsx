@@ -35,7 +35,8 @@ class TodoForm extends React.Component {
                         <Input placeholder='今天要做什么呢，博士' size="large" name="todoText" onChange={this.handleSubmit}/>
                     </Col>
                     <Col flex={1}>
-                        <Button type="primary" shape="circle" size="large" onClick={this.addTodo} aria-colspan={6}><PlusOutlined/></Button>
+                        <Button type="primary" shape="circle" size="large" onClick={this.addTodo}
+                                aria-colspan={6}><PlusOutlined/></Button>
                     </Col>
                 </Row>
             </>
