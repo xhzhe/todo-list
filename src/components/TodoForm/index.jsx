@@ -21,6 +21,7 @@ class TodoForm extends React.Component {
         addTodo({"content": this.state.todoText}).then((response) => {
             this.props.add(response.data)
         })
+        this.setState({todoText: ""});
     }
 
     handleSubmit = (event) => {
@@ -32,7 +33,8 @@ class TodoForm extends React.Component {
             <>
                 <Row>
                     <Col flex={50}>
-                        <Input placeholder='今天要做什么呢，博士' size="large" name="todoText" onChange={this.handleSubmit}/>
+                        <Input placeholder='今天要做什么呢，博士' size="large" name="todoText" onChange={this.handleSubmit}
+                               value={this.state.todoText}/>
                     </Col>
                     <Col flex={1}>
                         <Button type="primary" shape="circle" size="large" onClick={this.addTodo}
